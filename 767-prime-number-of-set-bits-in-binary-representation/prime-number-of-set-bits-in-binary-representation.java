@@ -8,12 +8,12 @@ class Solution {
         while(left <= right){
             int l = left;
             int c = 0;
-            while(l != 0){
-                if((l & 1) == 1){
-                    c++;
-                }
-                l >>= 1;
+            
+            while(l>0) {
+                l=l&(l-1);
+                c++;
             }
+
             if(hs.contains(c)){
                 ts++;
             }
