@@ -7,12 +7,7 @@ class Solution {
         int ts = 0;
         while(left <= right){
             int l = left;
-            int c = 0;
-            
-            while(l>0) {
-                l=l&(l-1);
-                c++;
-            }
+            int c = Integer.bitCount(l);
 
             if(hs.contains(c)){
                 ts++;
