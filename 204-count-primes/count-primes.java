@@ -4,19 +4,19 @@ class Solution {
             return 0;
         }
         boolean[] isp = new boolean[n];
-        Arrays.fill(isp, true);
-        isp[0] = false;
-        isp[1] = false;
+
+        isp[0] = true;
+        isp[1] = true;
         for(int i=2; i*i<n; i++){
-            if(isp[i]){
+            if(!isp[i]){
                 for(int j=i*i; j<n; j+=i){
-                    isp[j] = false;
+                    isp[j] = true;
                 }
             }
         }
         int c = 0;
         for(boolean b : isp){
-            if(b){
+            if(!b){
                 c++;
             }
         }
